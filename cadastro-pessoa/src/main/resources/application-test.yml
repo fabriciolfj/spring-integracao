@@ -13,13 +13,13 @@ spring:
     hibernate.ddl-auto: create-drop
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL57Dialect
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
     show-sql: true
   flyway:
-    locations:
-      - classpath:db/migration
+    enabled: false
 server:
   port: 8080
 
 
-api.logradouro: http://localhost:9090
+api.logradouro: http://localhost:${wiremock.server.port}
