@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 3
+    url: jdbc:h2:mem:db
+    username: desenvolvimento
+    password: desenvolvimento
+    driver-class-name: 'org.h2.Driver'
+  jpa:
+    database: h2
+    generate-ddl: true
+    hibernate.ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+    show-sql: true
+  flyway:
+    locations:
+      - classpath:db/migration
+server:
+  port: 8080
+
+
+api.logradouro: http://localhost:9090
